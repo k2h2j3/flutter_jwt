@@ -26,9 +26,9 @@ class _LoginScreenState extends State<LoginScreen> {
     // localhost
     final emulatorIp = '10.0.2.2:3000';
     final simulatorIp = '127.0.0.1:3000';
-    final serverIp = '192.168.0.50:3000';
+    final ip = '192.168.0.50:3000';
 
-    final ip = Platform.isIOS ? simulatorIp : emulatorIp;
+    //final ip = Platform.isIOS ? simulatorIp : emulatorIp;
     // final ip = serverIp;
 
     return DefaultLayout(
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         String token = stringToBase64.encode(rawString);
 
                         final resp = await dio.post(
-                          'http://$ip/auth/login',
+                          'http://192.168.0.50:3000/auth/login',
                           options: Options(
                             headers: {
                               'authorization': 'Basic $token',
